@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1676889CE7204BBA31459FC5 /* Pods_SimpleMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32828623055CF2764995DADB /* Pods_SimpleMVVM.framework */; };
 		18D62990203A49F40039ED3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6298F203A49F40039ED3A /* AppDelegate.swift */; };
 		18D62992203A49F40039ED3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D62991203A49F40039ED3A /* ViewController.swift */; };
 		18D62995203A49F40039ED3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D62993203A49F40039ED3A /* Main.storyboard */; };
 		18D62997203A49F40039ED3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D62996203A49F40039ED3A /* Assets.xcassets */; };
 		18D6299A203A49F40039ED3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D62998203A49F40039ED3A /* LaunchScreen.storyboard */; };
+		18D629A2203B5BD80039ED3A /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D629A1203B5BD80039ED3A /* CounterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,10 @@
 		18D62996203A49F40039ED3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18D62999203A49F40039ED3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18D6299B203A49F40039ED3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18D629A1203B5BD80039ED3A /* CounterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
+		32828623055CF2764995DADB /* Pods_SimpleMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75223B25ECACA0FE92E40556 /* Pods-SimpleMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMVVM.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleMVVM/Pods-SimpleMVVM.release.xcconfig"; sourceTree = "<group>"; };
+		B3A65297D6E59F93C4DC0838 /* Pods-SimpleMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMVVM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleMVVM/Pods-SimpleMVVM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1676889CE7204BBA31459FC5 /* Pods_SimpleMVVM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1686D8C81B8A61F4410BE436 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3A65297D6E59F93C4DC0838 /* Pods-SimpleMVVM.debug.xcconfig */,
+				75223B25ECACA0FE92E40556 /* Pods-SimpleMVVM.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		18D62983203A49F40039ED3A = {
 			isa = PBXGroup;
 			children = (
 				18D6298E203A49F40039ED3A /* SimpleMVVM */,
 				18D6298D203A49F40039ED3A /* Products */,
+				1686D8C81B8A61F4410BE436 /* Pods */,
+				6603FB9167DF0C90E2CF2136 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +78,17 @@
 				18D62996203A49F40039ED3A /* Assets.xcassets */,
 				18D62998203A49F40039ED3A /* LaunchScreen.storyboard */,
 				18D6299B203A49F40039ED3A /* Info.plist */,
+				18D629A1203B5BD80039ED3A /* CounterViewModel.swift */,
 			);
 			path = SimpleMVVM;
+			sourceTree = "<group>";
+		};
+		6603FB9167DF0C90E2CF2136 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32828623055CF2764995DADB /* Pods_SimpleMVVM.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18D6299E203A49F40039ED3A /* Build configuration list for PBXNativeTarget "SimpleMVVM" */;
 			buildPhases = (
+				C066389FC0A1021719749064 /* [CP] Check Pods Manifest.lock */,
 				18D62988203A49F40039ED3A /* Sources */,
 				18D62989203A49F40039ED3A /* Frameworks */,
 				18D6298A203A49F40039ED3A /* Resources */,
+				2670B6E64255544C920EAA0E /* [CP] Embed Pods Frameworks */,
+				0F8FAB3DD0E481B015DD3A3A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +161,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F8FAB3DD0E481B015DD3A3A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleMVVM/Pods-SimpleMVVM-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2670B6E64255544C920EAA0E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SimpleMVVM/Pods-SimpleMVVM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleMVVM/Pods-SimpleMVVM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C066389FC0A1021719749064 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleMVVM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18D62988203A49F40039ED3A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -138,6 +226,7 @@
 			files = (
 				18D62992203A49F40039ED3A /* ViewController.swift in Sources */,
 				18D62990203A49F40039ED3A /* AppDelegate.swift in Sources */,
+				18D629A2203B5BD80039ED3A /* CounterViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +347,7 @@
 		};
 		18D6299F203A49F40039ED3A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3A65297D6E59F93C4DC0838 /* Pods-SimpleMVVM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleMVVM/Info.plist;
@@ -270,6 +360,7 @@
 		};
 		18D629A0203A49F40039ED3A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75223B25ECACA0FE92E40556 /* Pods-SimpleMVVM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleMVVM/Info.plist;
@@ -299,6 +390,7 @@
 				18D629A0203A49F40039ED3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

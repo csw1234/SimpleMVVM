@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import SwiftyJSON
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
 
+    var viewModel: CounterViewModel?
+    
+    private let disposeBag = DisposeBag()
+    
+    // MARK: IBOutlets
+    
+    @IBOutlet weak var counterLabel: UILabel!
+    
+    // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        viewModel = CounterViewModel()
+        //setupBInding()
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +34,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func buttonTapped(_ sender: Any) {
+        viewModel?.updateCounter { value in
+            self.counterLabel.text = "\(value)"
+        }
+        
+        // Read about: GCD, Completion Blocks
+    }
+    
+    
+   // private func setupBinding(){
+   //     counterLabel.rx.text.orEmpty
+    //        .bind(to: viewModel.counterValue)
+   //         .disposed(by: disposeBag)
+    //
+    //}
 
 }
 
