@@ -10,8 +10,8 @@ import RxSwift
 
 class CounterViewModel: NSObject{
    
-    var count = Variable<String>("1")
-    var nameObserver : Observable<String>{
+    var count = Variable<Int>(1)
+    var nameObserver : Observable<Int>{
         return count.asObservable()
     }
     

@@ -33,15 +33,23 @@ class ViewController: UIViewController {
         //setupBinding()
         
         ddd.rx.text.asObservable()
-            .subscribe(onNext: {value in
-            self.viewModel?.count.value  = value!
+            .map{
+                value in
+                return Int(value!)
+            }
+            .subscribe({value in
+                self.viewModel?.count.value  = (value.element ?? 1)!
         }).disposed(by: disposeBag)
         
-        incButton.rx.tap.asObservable().subscribe(onNext: {val in
-            self.viewModel?.count.value = "78"
+        incButton.rx.tap.asObservable().subscribe({val in
+            self.viewModel?.count.value += 1
         }).disposed(by: disposeBag)
         
-        self.viewModel?.count.asObservable().bind(to: self.counterLabel.rx.text).disposed(by: disposeBag)
+        
+        self.viewModel?.count.asObservable().map{
+            value in
+            return String(value)
+            }.bind(to: self.counterLabel.rx.text).disposed(by: disposeBag)
     }
 
     override func didReceiveMemoryWarning() {
