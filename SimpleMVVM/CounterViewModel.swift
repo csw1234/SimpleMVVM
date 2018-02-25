@@ -6,16 +6,19 @@
 //  Copyright © 2018 csw. All rights reserved.
 //
 
-import UIKit
+import RxSwift
 
-class CounterViewModel: NSObject {
-    
-    private var counterValue: Int = 0
-
-    
-    func updateCounter(completion: (_ counterValue: Int) -> ()) {
-        counterValue += 1
-        completion(counterValue)
+class CounterViewModel: NSObject{
+   
+    var count = Variable<String>("1")
+    var nameObserver : Observable<String>{
+        return count.asObservable()
     }
     
+    let disposeBag = DisposeBag()
+    
+    func updateUI(){
+        
+
+    }
 }

@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 import RxSwift
-import RxCocoa
+//import RxCocoa
 
 class ViewController: UIViewController {
 
@@ -18,15 +18,30 @@ class ViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     // MARK: IBOutlets
+    @IBOutlet weak var ddd: UITextView!
     
     @IBOutlet weak var counterLabel: UILabel!
-    
+
+    @IBOutlet weak var incButton: UIButton!
     // MARK: Lifecycle
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = CounterViewModel()
-        //setupBInding()
+        //setupBinding()
+        
+        ddd.rx.text.asObservable()
+            .subscribe(onNext: {value in
+            self.viewModel?.count.value  = value!
+        }).disposed(by: disposeBag)
+        
+        incButton.rx.tap.asObservable().subscribe(onNext: {val in
+            self.viewModel?.count.value = "78"
+        }).disposed(by: disposeBag)
+        
+        self.viewModel?.count.asObservable().bind(to: self.counterLabel.rx.text).disposed(by: disposeBag)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,21 +49,28 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func buttonTapped(_ sender: Any) {
-        viewModel?.updateCounter { value in
-            self.counterLabel.text = "\(value)"
-        }
+    //@IBAction func buttonTapped(_ sender: Any) {
+        //viewModel?.updateCounter { value in
+           // self.counterLabel.text = "\(value)"
+       // }
         
         // Read about: GCD, Completion Blocks
-    }
-    
-    
-   // private func setupBinding(){
-   //     counterLabel.rx.text.orEmpty
-    //        .bind(to: viewModel.counterValue)
-   //         .disposed(by: disposeBag)
-    //
     //}
-
+    
+    func setupBinding(){
+        
+        
+        
+        viewModel?.count.asObservable().map{
+            value in
+            return "value:  \(value)"
+        }.subscribe(onNext: {value in
+            print(value)
+        })
+            .disposed(by: disposeBag)
+        
+        
+    }
 }
+
 

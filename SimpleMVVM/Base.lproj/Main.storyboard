@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A238m" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,34 +21,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVd-U7-vdp">
-                                <rect key="frame" x="166" y="323" width="11" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVd-U7-vdp">
+                                <rect key="frame" x="182" y="323" width="11" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6HH-EE-dyM">
-                                <rect key="frame" x="148" y="388" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6HH-EE-dyM">
+                                <rect key="frame" x="164.5" y="388" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HeQ-PO-Q86"/>
-                                </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="0" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ykz-fW-Mqp">
+                                <rect key="frame" x="157" y="261" width="61" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="9bk-E8-4cp"/>
+                                    <constraint firstAttribute="width" constant="61" id="nZ6-WA-jcS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NVd-U7-vdp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0cd-Cb-iRH"/>
                             <constraint firstItem="6HH-EE-dyM" firstAttribute="top" secondItem="NVd-U7-vdp" secondAttribute="bottom" constant="44" id="2ws-cY-cKV"/>
                             <constraint firstItem="NVd-U7-vdp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8CP-OD-iX8"/>
+                            <constraint firstItem="Ykz-fW-Mqp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ru2-AB-2HY"/>
+                            <constraint firstItem="NVd-U7-vdp" firstAttribute="top" secondItem="Ykz-fW-Mqp" secondAttribute="bottom" constant="20" id="jmS-JK-5Bo"/>
                             <constraint firstItem="6HH-EE-dyM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tsD-Tx-QYj"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="counterLabel" destination="NVd-U7-vdp" id="2aW-Ao-dV1"/>
+                        <outlet property="ddd" destination="Ykz-fW-Mqp" id="P7M-0F-qS2"/>
+                        <outlet property="incButton" destination="6HH-EE-dyM" id="nsK-Mj-Uoa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-223.19999999999999" y="-63.418290854572717"/>
         </scene>
     </scenes>
 </document>
